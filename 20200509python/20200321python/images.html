@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Tag</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    {% for image in images %}
+    <h1>{{image.title}}</h1>
+    <img src="{{ image.url }}">
+    <p>{{ image.desc }}</p>
+    {% endfor %}
+  </body>
+</html>

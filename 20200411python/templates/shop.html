@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <h3>{{ subtitle }}</h3>
+
+    <h4>My Cart (total: {{ total }})</h4>
+    <h3>
+      <a href="/cart/edit">Edit Cart</a>
+    </h3>
+    {% if cart | length > 0 %}
+      <table style="width: 200px; border: 1px solid black;">
+        <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+        {% for item in cart %}
+          {% set prod = products.get(item['id'])%}
+          <tr>
+             <td style="border: 1px solid black;">{{ prod.name }}</td>
+             <td style="border: 1px solid black;">{{ item.num }}</td>
+             <td style="border: 1px solid black;">{{ prod.price }}</td>
+             <td style="border: 1px solid black;">{{ item.num * prod.price }}</td>
+         </tr>
+    {% endfor %}
+      </table>
+    {% else %}
+      <h3>nothing</h3>
+    {% endif %}
+
+    <h4>Products</h4>
+    <ul>
+        {% for key, prod in products.items() %}
+        <li><a href="/product/{{prod.id}}">{{prod.name}}</a></li>
+        <img src="{{ prod.src }}" style="width: 150px;" />
+        {% endfor %}
+    </ul>
+  </body>
+</html>

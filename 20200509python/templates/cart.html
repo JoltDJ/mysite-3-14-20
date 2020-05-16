@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<table class="table">
+    <thead>
+      
+      <tr>
+        <th scope="col">#id</th>
+        <th scope="col">name</th>
+        <th scope="col">price</th>
+        <th scope="col">num</th>
+        <th scope="col">subtotal</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      {% for id, num in mycart.items() %}
+      {% set pd = products[id] %}
+      <tr>
+          <td>{{id}}</td>
+          <td>{{pd.name}}</td>
+          <td>{{pd.price}}</td>
+          <td>{{num}}</td>
+          <td>{{pd.price * num}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endblock %}

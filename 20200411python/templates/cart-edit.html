@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyShop - Edit</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1><a href="/">MyShop</a>
+    
+    </h1>
+
+    <form action="/cart/edit" method="post">
+        <div>
+          <label for="pen">Pen:</label>
+          <input id="pen" type="text" name="pen" value="{{cart[0].get('num')}}">
+        </div>
+        <div>
+          <label for="notebook">Notebook:</label>
+          <input id="notebook" type="text" name="notebook" value="{{cart[1].get('num')}}">
+        </div>
+        <p><button type="submit">Submit</button></p>
+    </form>
+  </body>
+</html>

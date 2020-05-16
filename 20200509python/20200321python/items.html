@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mt Items</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+      {% for item in items %}
+    <h1>{{ item.name }} {{ item.count }}</h1>
+    <hr/>
+    {% endfor %}
+  </body>
+</html>

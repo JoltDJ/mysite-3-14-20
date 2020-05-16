@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+ 
+{% block main %}
+<div class="container">
+  <div class="media">
+    <img src="{{product.src}}" class="mr-3" alt="hahaha" style="width: 200px;">
+    <div class="media-body">
+      <h5 class="mt-0">{{product.name}}</h5>
+      <h4>Price {{product.price}}$</h4>
+      <p>
+        {{product.desc}}
+      </p>
+      <a href="/add-cart/<sid>" class="btn btn-warning">Add to Cart</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

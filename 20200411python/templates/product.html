@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyShop - {{product.name}}</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1><a href="/">MyShop</a> - {{product.name}}</h1>
+
+    <ul>
+      <li>ID: {{product.id}}</li>
+      <li>Price: NT$ {{product.price}}</li>
+      <li>Description: {{product.desc}}</li>
+      <li><a href="/product/{{product.id}}/edit">Edit</a></li>
+    </ul>
+    <img src="{{ product.src }}" style="width: 200px;" />
+  </body>
+</html>
